@@ -1,0 +1,19 @@
+{
+  "tests": [
+    {
+      "name": "OPTIONS preflight",
+      "method": "OPTIONS",
+      "path": "/",
+      "expectedStatus": 200
+    },
+    {
+      "name": "Request admin code without telegram_id",
+      "method": "POST",
+      "path": "/request-admin-code",
+      "body": {},
+      "expectedStatus": 400,
+      "expectedBody": {"error": "no telegram_id"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
